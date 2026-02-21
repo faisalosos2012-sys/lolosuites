@@ -13,78 +13,160 @@ font-family:Segoe UI;
 margin:0;
 }
 
-h1,h2{
-text-align:center;
-color:#d4af37;
+.section{
+padding:25px;
 }
 
-.section{
-padding:40px 20px;
+h1{
+color:#d4af37;
+text-align:center;
+margin-top:40px;
+}
+
+h2{
+margin-top:40px;
+color:#d4af37;
 }
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:10px;
+grid-template-columns:1fr 1fr;
+gap:15px;
 margin-top:20px;
 }
 
 .gallery img{
 width:100%;
-border-radius:12px;
+border-radius:15px;
 }
 
-.btn{
-display:block;
-width:220px;
-margin:30px auto;
+.details{
+background:#1a1a1a;
+padding:20px;
+border-radius:15px;
+margin-top:20px;
+line-height:1.8;
+}
+
+form{
+margin-top:25px;
+display:flex;
+flex-direction:column;
+gap:15px;
+background:#1a1a1a;
+padding:20px;
+border-radius:15px;
+}
+
+input, textarea, select{
+padding:12px;
+border-radius:10px;
+border:none;
+font-size:16px;
+}
+
+button{
 padding:15px;
 background:#25D366;
 color:#fff;
-text-align:center;
+border:none;
 border-radius:30px;
-text-decoration:none;
 font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.contact{
+margin-top:20px;
+text-align:center;
 }
 </style>
-</head>
 
+<script>
+function sendBooking(suiteName){
+let name=document.getElementById("name").value;
+let date=document.getElementById("date").value;
+let guests=document.getElementById("guests").value;
+let notes=document.getElementById("notes").value;
+
+let message =
+"طلب حجز جديد\n\n" +
+"الجناح: " + suiteName + "\n" +
+"الاسم: " + name + "\n" +
+"التاريخ: " + date + "\n" +
+"عدد الأشخاص: " + guests + "\n" +
+"ملاحظات: " + notes;
+
+let url="https://wa.me/966545288802?text=" + encodeURIComponent(message);
+window.open(url,"_blank");
+}
+</script>
+
+</head>
 <body>
 
 <div class="section">
+
 <h1>Royal Oasis Spa Suite</h1>
-<h2>جناح الواحة الملكي سبا</h2>
+<h1>جناح الواحة الملكي سبا</h1>
 
 <div class="gallery">
-<img src="IMG_1864.png">
-<img src="IMG_1865.png">
-<img src="IMG_1866.png">
-<img src="IMG_1867.png">
-<img src="IMG_1868.png">
 <img src="IMG_1870.png">
 <img src="IMG_1871.png">
 <img src="IMG_1872.png">
 <img src="IMG_1873.png">
+<img src="IMG_1868.png">
+<img src="IMG_1867.png">
+<img src="IMG_1866.png">
+<img src="IMG_1865.png">
+<img src="IMG_1864.png">
 </div>
 
-<a class="btn" href="https://wa.me/966XXXXXXXXX">واتساب مباشر</a>
+<div class="details">
+<h2>حول هذا السكن</h2>
+صُمم هذا الجناح الفاخر ليمنحك الراحة والخصوصية التامة،
+ويقع في موقع استراتيجي شمال الرياض بالقرب من أهم المعالم:
+
+- بوليفارد الرياض 15 دقيقة  
+- مطار الملك خالد 17 دقيقة  
+- ممشى الغدير 10 دقائق  
+- الطريق الدائري الشمالي 10 دقائق  
+
+ومن الخدمات القريبة:
+صيدلية – سوبر ماركت – حلاق – مغسلة  
+*خاصية الدخول الذاتي متوفرة*
+
+<h2>المميزات</h2>
+✔️ جاكوزي داخلي فاخر  
+✔️ تلفزيون ذكي  
+✔️ مكيف هواء  
+✔️ مطبخ صغير متكامل  
+✔️ ثلاجة – موقد – ماكينة قهوة  
+✔️ شرفة خارجية  
+✔️ مستلزمات حمام كاملة  
+✔️ مسموح بالتدخين  
+
 </div>
 
+<form onsubmit="event.preventDefault(); sendBooking('Royal Oasis Spa Suite');">
+<input type="text" id="name" placeholder="الاسم الكامل" required>
+<input type="email" id="email" placeholder="البريد الإلكتروني" required>
+<input type="date" id="date" required>
+<select id="guests">
+<option>1 شخص</option>
+<option>2 أشخاص</option>
+<option>3 أشخاص</option>
+<option>4 أشخاص</option>
+</select>
+<textarea id="notes" placeholder="تفاصيل إضافية"></textarea>
+<button type="submit">احجز الآن عبر واتساب</button>
+</form>
 
-<div class="section">
-<h1>Amber Harmony Suite</h1>
-<h2>جناح هارموني العنبر</h2>
-
-<div class="gallery">
-<img src="IMG_1858.png">
-<img src="IMG_1859.png">
-<img src="IMG_1860.png">
-<img src="IMG_1861.png">
-<img src="IMG_1862.png">
-<img src="IMG_1863.png">
+<div class="contact">
+📞 0545288802  
+📧 info@lolosuites.com
 </div>
 
-<a class="btn" href="https://wa.me/966XXXXXXXXX">واتساب مباشر</a>
 </div>
 
 </body>
