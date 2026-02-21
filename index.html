@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lolo Suites | لولو سويتس</title>
+<style>
+body{font-family:Arial;background:#f8f6f3;text-align:center;padding:40px}
+h1{color:#b48a3c}
+button{padding:12px 20px;background:#000;color:#fff;border:none;border-radius:8px}
+.whatsapp{position:fixed;bottom:20px;left:20px;background:#25D366;color:#fff;padding:12px 18px;border-radius:50px;text-decoration:none}
+</style>
+</head>
+<body>
+
+<h1>Lolo Suites</h1>
+<p>إقامة فاخرة في حي الربيع – الرياض</p>
+
+<h2>طلب حجز</h2>
+<form onsubmit="sendBooking(event)">
+<input type="text" id="name" placeholder="الاسم الكامل" required><br><br>
+<input type="date" id="date" required><br><br>
+<input type="number" id="guests" placeholder="عدد الأشخاص" required><br><br>
+<button type="submit">إرسال الطلب عبر واتساب</button>
+</form>
+
+<a class="whatsapp" href="https://wa.me/966545288802" target="_blank">واتساب</a>
+
+<script>
+function sendBooking(e){
+e.preventDefault();
+var name=document.getElementById("name").value;
+var date=document.getElementById("date").value;
+var guests=document.getElementById("guests").value;
+var msg=`طلب حجز جديد:%0Aالاسم: ${name}%0Aالتاريخ: ${date}%0Aعدد الأشخاص: ${guests}`;
+window.open(`https://wa.me/966545288802?text=${msg}`);
+}
+</script>
+
+</body>
+</html>
