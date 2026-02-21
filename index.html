@@ -2,135 +2,90 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lolo Suites | لولو سويتس</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
 <style>
 body{
 background:#0f0f0f;
 color:#fff;
-font-family: 'Segoe UI', sans-serif;
+font-family:Segoe UI;
+margin:0;
 }
-nav{
-background:#000;
-border-bottom:1px solid #b48a3c;
-}
-.gold{color:#d4af37}
-.hero{
+
+h1,h2{
 text-align:center;
-padding:120px 20px;
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover;
+color:#d4af37;
 }
-.hero h1{
-font-size:3rem;
+
+.section{
+padding:40px 20px;
 }
-section{
-padding:80px 20px;
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
+margin-top:20px;
 }
-.card{
-background:#1a1a1a;
-padding:30px;
-border-radius:15px;
-border:1px solid #b48a3c33;
+
+.gallery img{
+width:100%;
+border-radius:12px;
 }
-button{
-background:#d4af37;
-color:#000;
-border:none;
-font-weight:bold;
-}
-input,textarea{
-background:#111;
-color:#fff;
-border:1px solid #444;
-}
-.whatsapp{
-position:fixed;
-bottom:20px;
-left:20px;
+
+.btn{
+display:block;
+width:220px;
+margin:30px auto;
+padding:15px;
 background:#25D366;
 color:#fff;
-padding:14px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-}
-footer{
 text-align:center;
-padding:40px;
-border-top:1px solid #b48a3c;
-margin-top:60px;
+border-radius:30px;
+text-decoration:none;
+font-size:18px;
 }
 </style>
 </head>
 
 <body>
 
-<nav class="container-fluid">
-<ul><li><strong class="gold">Lolo Suites</strong></li></ul>
-<ul>
-<li><a href="#about">عن الشقق</a></li>
-<li><a href="#booking" role="button">احجز الآن</a></li>
-</ul>
-</nav>
+<div class="section">
+<h1>Royal Oasis Spa Suite</h1>
+<h2>جناح الواحة الملكي سبا</h2>
 
-<section class="hero">
-<h1 class="gold">Lolo Suites</h1>
-<h3>لولو سويتس</h3>
-<p>إقامة فاخرة في حي الربيع – شمال الرياض</p>
-</section>
-
-<section id="about" class="container">
-<div class="grid">
-<div class="card">
-<h2 class="gold">Amber Harmony Suite</h2>
-<p>جناح هارموني العنبر</p>
-<p>تصميم دافئ بإضاءة فندقية راقية وخصوصية كاملة.</p>
+<div class="gallery">
+<img src="IMG_1864.png">
+<img src="IMG_1865.png">
+<img src="IMG_1866.png">
+<img src="IMG_1867.png">
+<img src="IMG_1868.png">
+<img src="IMG_1870.png">
+<img src="IMG_1871.png">
+<img src="IMG_1872.png">
+<img src="IMG_1873.png">
 </div>
 
-<div class="card">
-<h2 class="gold">Royal Oasis Spa Suite</h2>
-<p>جناح الواحة الملكي سبا</p>
-<p>تجربة سبا خاصة مع جاكوزي وأجواء رومانسية فاخرة.</p>
+<a class="btn" href="https://wa.me/966XXXXXXXXX">واتساب مباشر</a>
 </div>
+
+
+<div class="section">
+<h1>Amber Harmony Suite</h1>
+<h2>جناح هارموني العنبر</h2>
+
+<div class="gallery">
+<img src="IMG_1858.png">
+<img src="IMG_1859.png">
+<img src="IMG_1860.png">
+<img src="IMG_1861.png">
+<img src="IMG_1862.png">
+<img src="IMG_1863.png">
 </div>
-</section>
 
-<section id="booking" class="container">
-<h2 class="gold">احجز إقامتك</h2>
-<p>السعر عند التواصل (حسب التاريخ والموسم)</p>
-
-<form onsubmit="sendBooking(event)">
-<div class="grid">
-<input type="text" id="name" placeholder="الاسم الكامل" required>
-<input type="email" id="email" placeholder="البريد الإلكتروني" required>
-<input type="date" id="date" required>
-<input type="number" id="guests" placeholder="عدد الأشخاص" required>
+<a class="btn" href="https://wa.me/966XXXXXXXXX">واتساب مباشر</a>
 </div>
-<br>
-<button type="submit">إرسال طلب الحجز</button>
-</form>
-</section>
-
-<footer>
-<p>📍 حي الربيع – الرياض</p>
-<p>📧 lolosuites.sa@gmail.com</p>
-</footer>
-
-<a class="whatsapp" href="https://wa.me/966545288802" target="_blank">واتساب مباشر</a>
-
-<script>
-function sendBooking(e){
-e.preventDefault();
-var name=document.getElementById("name").value;
-var email=document.getElementById("email").value;
-var date=document.getElementById("date").value;
-var guests=document.getElementById("guests").value;
-var msg=`طلب حجز جديد:%0Aالاسم: ${name}%0Aالبريد: ${email}%0Aالتاريخ: ${date}%0Aعدد الأشخاص: ${guests}`;
-window.open(`https://wa.me/966545288802?text=${msg}`);
-}
-</script>
 
 </body>
 </html>
