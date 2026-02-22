@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amber Harmony Suite</title>
+
+<style>
+body{
+margin:0;
+font-family:'Segoe UI';
+background:#f6f3ee;
+color:#222;
+text-align:center;
+}
+
+.hero{
+position:relative;
+}
+
+.hero img{
+width:100%;
+height:70vh;
+object-fit:cover;
+}
+
+.hero h1{
+position:absolute;
+bottom:40px;
+right:20px;
+color:white;
+font-size:32px;
+}
+
+.section img{
+width:100%;
+margin-top:30px;
+border-radius:25px;
+}
+
+.form{
+background:white;
+margin:50px 20px;
+padding:30px;
+border-radius:30px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+input{
+width:100%;
+padding:15px;
+margin:10px 0;
+border-radius:20px;
+border:1px solid #ddd;
+}
+
+button{
+width:100%;
+padding:18px;
+background:#c8a23a;
+color:white;
+border:none;
+border-radius:40px;
+font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<img src="IMG_1860.png">
+<h1>Amber Harmony Suite</h1>
+</div>
+
+<div class="section">
+<img src="IMG_1863.png">
+<img src="IMG_1861.png">
+<img src="IMG_1859.png">
+<img src="IMG_1862.png">
+<img src="IMG_1858.png">
+</div>
+
+<div class="form">
+<h2>حجز الجناح</h2>
+<input type="text" placeholder="الاسم الكامل">
+<input type="number" placeholder="عدد الأشخاص">
+<input type="date" id="checkin">
+<input type="date" id="checkout">
+<p id="nights">عدد الليالي: 0</p>
+<input type="tel" placeholder="رقم الجوال">
+<input type="email" placeholder="البريد الإلكتروني (اختياري)">
+<button>احجز الآن عبر واتساب</button>
+</div>
+
+<script>
+const checkin=document.getElementById("checkin");
+const checkout=document.getElementById("checkout");
+const nights=document.getElementById("nights");
+
+function calculate(){
+if(checkin.value && checkout.value){
+const inDate=new Date(checkin.value);
+const outDate=new Date(checkout.value);
+const diff=(outDate-inDate)/(1000*60*60*24);
+nights.innerText="عدد الليالي: "+(diff>0?diff:0);
+}
+}
+
+checkin.addEventListener("change",calculate);
+checkout.addEventListener("change",calculate);
+</script>
+
+</body>
+</html>
