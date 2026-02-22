@@ -1,3 +1,4 @@
+"}
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -5,259 +6,114 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royal Oasis Spa Suite</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-
 <style>
-
 body{
 margin:0;
-background:#f8f4ef;
-font-family:'Cairo',sans-serif;
-color:#3e3a37;
+font-family:'Segoe UI';
+background:#f6f3ee;
+color:#222;
+text-align:center;
 }
-
-h1,h2{
-font-family:'Playfair Display',serif;
-letter-spacing:1px;
-}
-
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
-
-/* HERO */
 
 .hero{
 position:relative;
-height:80vh;
-background:url('IMG_1860.png') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
 }
 
-.hero::after{
-content:'';
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.25);
-}
-
-.hero-content{
-position:relative;
-color:white;
-text-align:center;
-z-index:2;
-}
-
-.hero-content h1{
-font-size:48px;
-margin-bottom:10px;
-}
-
-.hero-content p{
-font-size:18px;
-opacity:0.9;
-}
-
-/* ABOUT */
-
-.about{
-padding:80px 0;
-text-align:center;
-line-height:1.9;
-font-size:18px;
-max-width:800px;
-margin:auto;
-}
-
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:2fr 1fr 1fr;
-gap:15px;
-padding:60px 0;
-}
-
-.gallery img{
+.hero img{
 width:100%;
-height:100%;
+height:70vh;
 object-fit:cover;
-border-radius:14px;
 }
 
-/* BOOKING */
+.hero h1{
+position:absolute;
+bottom:40px;
+right:20px;
+color:white;
+font-size:32px;
+}
 
-.booking{
+.section img{
+width:100%;
+margin-top:30px;
+border-radius:25px;
+}
+
+.form{
 background:white;
-padding:50px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.08);
-margin:60px auto;
-max-width:700px;
+margin:50px 20px;
+padding:30px;
+border-radius:30px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-.booking h2{
-text-align:center;
-margin-bottom:30px;
-}
-
-.booking input, .booking select{
+input{
 width:100%;
 padding:15px;
-margin-bottom:15px;
+margin:10px 0;
+border-radius:20px;
 border:1px solid #ddd;
-border-radius:12px;
-font-size:15px;
-background:#fafafa;
-}
-
-.nights{
-margin:15px 0;
-font-weight:600;
-color:#b89b5e;
 }
 
 button{
 width:100%;
 padding:18px;
-border:none;
-background:#b89b5e;
+background:#c8a23a;
 color:white;
-font-size:16px;
-border-radius:14px;
-cursor:pointer;
-transition:0.3s;
+border:none;
+border-radius:40px;
+font-size:18px;
 }
-
-button:hover{
-background:#a4874e;
-}
-
-footer{
-text-align:center;
-padding:40px 0;
-font-size:14px;
-opacity:0.7;
-}
-
-@media(max-width:900px){
-.gallery{
-grid-template-columns:1fr;
-}
-.hero-content h1{
-font-size:34px;
-}
-}
-
 </style>
 </head>
+
 <body>
 
-<section class="hero">
-<div class="hero-content">
+<div class="hero">
+<img src="IMG_1872.png">
 <h1>Royal Oasis Spa Suite</h1>
-<p>تجربة بوتيك خاصة تمنحك الخصوصية والهدوء التام</p>
 </div>
-</section>
 
-<div class="container">
-
-<section class="about">
-<p>
-صُمم هذا الجناح البوتيكي ليمنحك إحساس الفندق الخاص،
-بموقع استراتيجي شمال الرياض بالقرب من أبرز المعالم،
-مع أجواء هادئة وتصميم داخلي فاخر يوازن بين الدفء والرقي.
-</p>
-</section>
-
-<section class="gallery">
-<img src="IMG_1860.png">
-<img src="IMG_1865.png">
+<div class="section">
+<img src="IMG_1871.png">
+<img src="IMG_1873.png">
 <img src="IMG_1867.png">
-</section>
-
-<section class="booking">
-<h2>حجز الجناح</h2>
-
-<input type="text" id="name" placeholder="الاسم الكامل" required>
-
-<select id="guests">
-<option value="">عدد الأشخاص</option>
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>4</option>
-</select>
-
-<label>تاريخ الدخول</label>
-<input type="date" id="checkin">
-
-<label>تاريخ الخروج</label>
-<input type="date" id="checkout">
-
-<div class="nights" id="nights">عدد الليالي: 0</div>
-
-<input type="tel" id="phone" placeholder="رقم الجوال" required>
-
-<input type="email" id="email" placeholder="البريد الإلكتروني (اختياري)">
-
-<button onclick="sendWhatsApp()">احجز الآن عبر واتساب</button>
-
-</section>
-
+<img src="IMG_1868.png">
+<img src="IMG_1870.png">
+<img src="IMG_1866.png">
+<img src="IMG_1865.png">
+<img src="IMG_1864.png">
 </div>
 
-<footer>
-© Royal Oasis Spa Suite
-</footer>
+<div class="form">
+<h2>حجز الجناح</h2>
+<input type="text" placeholder="الاسم الكامل">
+<input type="number" placeholder="عدد الأشخاص">
+<input type="date" id="checkin">
+<input type="date" id="checkout">
+<p id="nights">عدد الليالي: 0</p>
+<input type="tel" placeholder="رقم الجوال">
+<input type="email" placeholder="البريد الإلكتروني (اختياري)">
+<button>احجز الآن عبر واتساب</button>
+</div>
 
 <script>
+const checkin=document.getElementById("checkin");
+const checkout=document.getElementById("checkout");
+const nights=document.getElementById("nights");
 
-const checkin = document.getElementById("checkin");
-const checkout = document.getElementById("checkout");
-const nightsDisplay = document.getElementById("nights");
-
-function calculateNights(){
+function calculate(){
 if(checkin.value && checkout.value){
-let start = new Date(checkin.value);
-let end = new Date(checkout.value);
-let diff = (end - start) / (1000 * 60 * 60 * 24);
-if(diff > 0){
-nightsDisplay.innerText = "عدد الليالي: " + diff;
-}else{
-nightsDisplay.innerText = "عدد الليالي: 0";
-}
+const inDate=new Date(checkin.value);
+const outDate=new Date(checkout.value);
+const diff=(outDate-inDate)/(10006060*24);
+nights.innerText="عدد الليالي: "+(diff>0?diff:0);
 }
 }
 
-checkin.addEventListener("change", calculateNights);
-checkout.addEventListener("change", calculateNights);
-
-function sendWhatsApp(){
-let name = document.getElementById("name").value;
-let guests = document.getElementById("guests").value;
-let phone = document.getElementById("phone").value;
-let email = document.getElementById("email").value;
-let nights = nightsDisplay.innerText;
-
-let message = `حجز جديد:
-الاسم: ${name}
-عدد الأشخاص: ${guests}
-تاريخ الدخول: ${checkin.value}
-تاريخ الخروج: ${checkout.value}
-${nights}
-جوال العميل: ${phone}
-البريد: ${email}`;
-
-let url = "https://wa.me/966545288802?text=" + encodeURIComponent(message);
-window.open(url, "_blank");
-}
-
+checkin.addEventListener("change",calculate);
+checkout.addEventListener("change",calculate);
 </script>
 
 </body>
-</html>
+</htm
