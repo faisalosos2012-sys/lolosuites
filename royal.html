@@ -5,160 +5,259 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royal Oasis Spa Suite</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
 <style>
+
 body{
 margin:0;
-font-family:'Segoe UI';
-background:#f6f3ee;
-color:#222;
+background:#f8f4ef;
+font-family:'Cairo',sans-serif;
+color:#3e3a37;
 }
 
-.hero img{
-width:100%;
-height:65vh;
-object-fit:cover;
+h1,h2{
+font-family:'Playfair Display',serif;
+letter-spacing:1px;
 }
 
 .container{
-max-width:1000px;
+width:90%;
+max-width:1200px;
 margin:auto;
-padding:40px 20px;
 }
 
-h1{
-margin-bottom:20px;
+/* HERO */
+
+.hero{
+position:relative;
+height:80vh;
+background:url('IMG_1860.png') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
 }
+
+.hero::after{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.25);
+}
+
+.hero-content{
+position:relative;
+color:white;
+text-align:center;
+z-index:2;
+}
+
+.hero-content h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero-content p{
+font-size:18px;
+opacity:0.9;
+}
+
+/* ABOUT */
+
+.about{
+padding:80px 0;
+text-align:center;
+line-height:1.9;
+font-size:18px;
+max-width:800px;
+margin:auto;
+}
+
+/* GALLERY */
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-bottom:40px;
+grid-template-columns:2fr 1fr 1fr;
+gap:15px;
+padding:60px 0;
 }
 
 .gallery img{
 width:100%;
-border-radius:20px;
+height:100%;
 object-fit:cover;
+border-radius:14px;
 }
 
-form{
+/* BOOKING */
+
+.booking{
 background:white;
-padding:30px;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+padding:50px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+margin:60px auto;
+max-width:700px;
 }
 
-input,select{
+.booking h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+.booking input, .booking select{
 width:100%;
-padding:12px;
+padding:15px;
 margin-bottom:15px;
-border-radius:10px;
 border:1px solid #ddd;
-font-size:16px;
+border-radius:12px;
+font-size:15px;
+background:#fafafa;
+}
+
+.nights{
+margin:15px 0;
+font-weight:600;
+color:#b89b5e;
 }
 
 button{
 width:100%;
-padding:16px;
-background:#25D366;
-color:white;
+padding:18px;
 border:none;
-border-radius:30px;
-font-size:18px;
+background:#b89b5e;
+color:white;
+font-size:16px;
+border-radius:14px;
 cursor:pointer;
+transition:0.3s;
 }
 
-#nights{
-font-weight:bold;
-margin-bottom:15px;
-color:#c9a227;
+button:hover{
+background:#a4874e;
 }
+
+footer{
+text-align:center;
+padding:40px 0;
+font-size:14px;
+opacity:0.7;
+}
+
+@media(max-width:900px){
+.gallery{
+grid-template-columns:1fr;
+}
+.hero-content h1{
+font-size:34px;
+}
+}
+
 </style>
-
-<script>
-function calculateNights(){
-let checkin=new Date(document.getElementById("checkin").value);
-let checkout=new Date(document.getElementById("checkout").value);
-
-if(checkin && checkout){
-let diff=(checkout-checkin)/(1000*60*60*24);
-if(diff>0){
-document.getElementById("nights").innerText="عدد الليالي: "+diff;
-}else{
-document.getElementById("nights").innerText="";
-}
-}
-}
-
-function sendBooking(){
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let checkin=document.getElementById("checkin").value;
-let checkout=document.getElementById("checkout").value;
-let guests=document.getElementById("guests").value;
-let nights=document.getElementById("nights").innerText;
-
-let message=
-"طلب حجز - Royal Oasis\n\n"+
-"الاسم: "+name+"\n"+
-"الجوال: "+phone+"\n"+
-"عدد الأشخاص: "+guests+"\n"+
-"تاريخ الدخول: "+checkin+"\n"+
-"تاريخ الخروج: "+checkout+"\n"+
-nights;
-
-let url="https://wa.me/966545288802?text="+encodeURIComponent(message);
-window.open(url,"_blank");
-}
-</script>
-
 </head>
 <body>
 
-<div class="hero">
-<img src="IMG_1873.png">
+<section class="hero">
+<div class="hero-content">
+<h1>Royal Oasis Spa Suite</h1>
+<p>تجربة بوتيك خاصة تمنحك الخصوصية والهدوء التام</p>
 </div>
+</section>
 
 <div class="container">
 
-<h1>Royal Oasis Spa Suite</h1>
+<section class="about">
+<p>
+صُمم هذا الجناح البوتيكي ليمنحك إحساس الفندق الخاص،
+بموقع استراتيجي شمال الرياض بالقرب من أبرز المعالم،
+مع أجواء هادئة وتصميم داخلي فاخر يوازن بين الدفء والرقي.
+</p>
+</section>
 
-<div class="gallery">
-<img src="IMG_1870.png">
-<img src="IMG_1871.png">
-<img src="IMG_1872.png">
-<img src="IMG_1868.png">
+<section class="gallery">
+<img src="IMG_1860.png">
+<img src="IMG_1865.png">
 <img src="IMG_1867.png">
-</div>
+</section>
 
-<form onsubmit="event.preventDefault(); sendBooking();">
+<section class="booking">
+<h2>حجز الجناح</h2>
 
 <input type="text" id="name" placeholder="الاسم الكامل" required>
-<input type="tel" id="phone" placeholder="رقم الجوال" required>
 
 <select id="guests">
-<option>1 شخص</option>
-<option>2 أشخاص</option>
-<option>3 أشخاص</option>
-<option>4 أشخاص</option>
+<option value="">عدد الأشخاص</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
 </select>
 
 <label>تاريخ الدخول</label>
-<input type="date" id="checkin" onchange="calculateNights()" required>
+<input type="date" id="checkin">
 
 <label>تاريخ الخروج</label>
-<input type="date" id="checkout" onchange="calculateNights()" required>
+<input type="date" id="checkout">
 
-<p id="nights"></p>
+<div class="nights" id="nights">عدد الليالي: 0</div>
 
-<input type="email" placeholder="البريد الإلكتروني (اختياري)">
+<input type="tel" id="phone" placeholder="رقم الجوال" required>
 
-<button type="submit">إرسال طلب الحجز</button>
+<input type="email" id="email" placeholder="البريد الإلكتروني (اختياري)">
 
-</form>
+<button onclick="sendWhatsApp()">احجز الآن عبر واتساب</button>
+
+</section>
 
 </div>
+
+<footer>
+© Royal Oasis Spa Suite
+</footer>
+
+<script>
+
+const checkin = document.getElementById("checkin");
+const checkout = document.getElementById("checkout");
+const nightsDisplay = document.getElementById("nights");
+
+function calculateNights(){
+if(checkin.value && checkout.value){
+let start = new Date(checkin.value);
+let end = new Date(checkout.value);
+let diff = (end - start) / (1000 * 60 * 60 * 24);
+if(diff > 0){
+nightsDisplay.innerText = "عدد الليالي: " + diff;
+}else{
+nightsDisplay.innerText = "عدد الليالي: 0";
+}
+}
+}
+
+checkin.addEventListener("change", calculateNights);
+checkout.addEventListener("change", calculateNights);
+
+function sendWhatsApp(){
+let name = document.getElementById("name").value;
+let guests = document.getElementById("guests").value;
+let phone = document.getElementById("phone").value;
+let email = document.getElementById("email").value;
+let nights = nightsDisplay.innerText;
+
+let message = `حجز جديد:
+الاسم: ${name}
+عدد الأشخاص: ${guests}
+تاريخ الدخول: ${checkin.value}
+تاريخ الخروج: ${checkout.value}
+${nights}
+جوال العميل: ${phone}
+البريد: ${email}`;
+
+let url = "https://wa.me/966545288802?text=" + encodeURIComponent(message);
+window.open(url, "_blank");
+}
+
+</script>
 
 </body>
 </html>
