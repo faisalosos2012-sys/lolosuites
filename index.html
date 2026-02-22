@@ -3,201 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal Oasis Spa Suite | لولو سويتس</title>
+<title>Lolo Suites</title>
 
 <style>
 body{
 margin:0;
 font-family:'Segoe UI';
-background:linear-gradient(135deg,#0f0f0f,#1c1c1c,#2a1f0f);
-color:#fff;
+background:#f6f3ee;
+color:#222;
+text-align:center;
 }
 
-/* Hero */
-.hero{
-text-align:center;
+.header{
 padding:60px 20px 30px;
 }
 
-.hero h1{
-font-size:38px;
-color:#d4af37;
+.header h1{
+font-size:42px;
 margin-bottom:10px;
 }
 
-.hero h2{
-font-size:26px;
-color:#caa64d;
-margin:0;
+.header p{
+color:#777;
 }
 
-/* Main Image */
-.main-image{
-width:100%;
-max-width:1000px;
-margin:30px auto;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 0 40px rgba(212,175,55,0.4);
-}
-
-.main-image img{
-width:100%;
-display:block;
-}
-
-/* Gallery Grid */
-.gallery{
-max-width:1000px;
-margin:40px auto;
+.suites{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:0 20px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+padding:40px;
+max-width:1200px;
+margin:auto;
 }
 
-.gallery img{
-width:100%;
-border-radius:18px;
-transition:.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-/* Glass Card */
 .card{
-max-width:1000px;
-margin:40px auto;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-padding:30px;
-border-radius:20px;
-line-height:1.9;
-}
-
-/* Booking Form */
-.booking{
-max-width:1000px;
-margin:40px auto 80px;
-background:#111;
-padding:30px;
-border-radius:20px;
-}
-
-.booking input,
-.booking textarea,
-.booking select{
-width:100%;
-padding:14px;
-margin-bottom:15px;
-border:none;
-border-radius:12px;
-font-size:16px;
-}
-
-.booking button{
-width:100%;
-padding:18px;
-background:#25D366;
-color:white;
-border:none;
+background:white;
 border-radius:30px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
+overflow:hidden;
+box-shadow:0 10px 40px rgba(0,0,0,.08);
+transition:.4s;
 }
 
-.booking button:hover{
-background:#1ebe5d;
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:380px;
+object-fit:cover;
+}
+
+.card-content{
+padding:25px;
+}
+
+.card-content h3{
+margin-bottom:15px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+background:#c9a227;
+color:white;
+border-radius:30px;
+text-decoration:none;
 }
 </style>
-
-<script>
-function sendBooking(){
-let name=document.getElementById("name").value;
-let email=document.getElementById("email").value;
-let date=document.getElementById("date").value;
-let guests=document.getElementById("guests").value;
-let notes=document.getElementById("notes").value;
-
-let message=
-"طلب حجز - Royal Oasis Spa Suite\n\n"+
-"الاسم: "+name+"\n"+
-"البريد: "+email+"\n"+
-"التاريخ: "+date+"\n"+
-"عدد الأشخاص: "+guests+"\n"+
-"تفاصيل: "+notes;
-
-let url="https://wa.me/966545288802?text="+encodeURIComponent(message);
-window.open(url,"_blank");
-}
-</script>
-
 </head>
 <body>
 
-<div class="hero">
-<h1>Royal Oasis Spa Suite</h1>
-<h2>جناح الواحة الملكي سبا</h2>
+<div class="header">
+<h1>Lolo Suites</h1>
+<p>Luxury Boutique Stay in Riyadh</p>
 </div>
 
-<div class="main-image">
+<div class="suites">
+
+<div class="card">
 <img src="IMG_1873.png">
+<div class="card-content">
+<h3>Royal Oasis Spa Suite</h3>
+<a href="royal.html" class="btn">استعرض الجناح</a>
 </div>
-
-<div class="gallery">
-<img src="IMG_1870.png">
-<img src="IMG_1871.png">
-<img src="IMG_1872.png">
-<img src="IMG_1868.png">
-<img src="IMG_1867.png">
-<img src="IMG_1866.png">
-<img src="IMG_1865.png">
-<img src="IMG_1864.png">
 </div>
 
 <div class="card">
-<h2 style="color:#d4af37;">حول هذا السكن</h2>
-صُمم هذا الجناح الفاخر ليمنحك أقصى درجات الراحة والخصوصية.
-يقع شمال الرياض بالقرب من أهم المعالم:
-<br><br>
-• بوليفارد الرياض 15 دقيقة  
-• مطار الملك خالد 17 دقيقة  
-• ممشى الغدير 10 دقائق  
-• الطريق الدائري الشمالي 10 دقائق  
-<br><br>
-صيدلية – سوبر ماركت – حلاق – مغسلة  
-<br>
-<b>خاصية الدخول الذاتي متوفرة</b>
+<img src="IMG_1858.png">
+<div class="card-content">
+<h3>Amber Harmony Suite</h3>
+<a href="amber.html" class="btn">استعرض الجناح</a>
+</div>
 </div>
 
-<div class="card">
-<h2 style="color:#d4af37;">المميزات</h2>
-✔ جاكوزي داخلي فاخر  
-✔ تلفزيون ذكي  
-✔ مكيف هواء  
-✔ مطبخ صغير متكامل  
-✔ ثلاجة – موقد – ماكينة قهوة  
-✔ شرفة خارجية  
-✔ مستلزمات حمام كاملة  
-✔ مسموح بالتدخين  
-</div>
-
-<div class="booking">
-<input type="text" id="name" placeholder="الاسم الكامل" required>
-<input type="email" id="email" placeholder="البريد الإلكتروني" required>
-<input type="date" id="date" required>
-<select id="guests">
-<option>1 شخص</option>
-<option>2 أشخاص</option>
-<option>3 أشخاص</option>
-<option>4 أشخاص</option>
-</select>
-<textarea id="notes" placeholder="تفاصيل إضافية"></textarea>
-<button onclick="sendBooking()">احجز الآن عبر واتساب</button>
 </div>
 
 </body>
